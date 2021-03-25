@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "YuanShen.Parser": {
+      "commandName": "Project",
+      "commandLineArgs": "D:\\GenshinReversing\\log"
+    }
+  }
+}
