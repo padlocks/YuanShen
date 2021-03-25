@@ -92,9 +92,9 @@ namespace YuanShen.Sniffer
                 if (udpPacket.DestinationPort >= 22100 && udpPacket.DestinationPort <= 22102)
                     direction = EPacketDirection.Out;
 
-                Console.WriteLine($"New {direction} packet with {udpPacket.PayloadPacket.PayloadData.Length} bytes");
+                Console.WriteLine($"New {direction}_{packetCount.ToString("D5")} packet with {udpPacket.PayloadData.Length} bytes");
 
-                File.WriteAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Dumps", UnixTime, $"{packetCount.ToString("D5")}_{direction}.bin"), udpPacket.PayloadPacket.PayloadData);
+                File.WriteAllBytes(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Dumps", UnixTime, $"{packetCount.ToString("D5")}_{direction}.bin"), udpPacket.PayloadData);
 
                 packetCount++;
             }
